@@ -1,5 +1,5 @@
 # Requerimientos.
-1. NodeJs >= 10.*
+1. NodeJs >= 8.*
 2. mongodb >= 3.*
 
 # Pasos para desplegar la app.
