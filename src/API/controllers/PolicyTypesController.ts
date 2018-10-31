@@ -12,6 +12,25 @@ class PolicyTypesController extends BaseController {
 		return async (req, res) => {
 			try {
 				let policyTypes : any;
+				let newPolicy: any;
+				let result: any;
+
+				policyTypes = await PolicyTypeModel.find();
+				// si no hay tipo de pólizas se crean por defecto
+				if ( Lodash.isEmpty(policyTypes) ) {
+					newPolicy = new PolicyTypeModel({
+						name: 'SOAT',
+						value: 300000,
+						insurancePolicys: []
+					});
+					result = await newPolicy.save();
+					newPolicy = new PolicyTypeModel({
+						name: 'Todo riesgo',
+						value: 900000,
+						insurancePolicys: []
+					});
+					result = await newPolicy.save();
+				}
 				policyTypes = await PolicyTypeModel.find();
 				res.status(200).json(policyTypes);
 			} catch (error) {
