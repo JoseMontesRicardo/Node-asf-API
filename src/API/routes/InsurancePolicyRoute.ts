@@ -34,7 +34,7 @@ class InsurancePolicyRoute extends BaseRoute {
 			[
 				InsurancePolicyMiddleware.createParams,
 				InsurancePolicyMiddleware.validatePolicyType,
-				InsurancePolicyMiddleware.validateIdentification
+				// InsurancePolicyMiddleware.validateIdentification
 			]
 		);
 	}
